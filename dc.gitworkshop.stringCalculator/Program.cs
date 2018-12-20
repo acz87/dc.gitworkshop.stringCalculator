@@ -10,6 +10,7 @@ namespace dc.gitworkshop.stringCalculator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("StringCalculator tests:");
             // for empty input just return 0
             Test(expected: "0", actual: StringCalculator.Compute(""));
 
@@ -34,12 +35,22 @@ namespace dc.gitworkshop.stringCalculator
             Test(expected: "numbers greater than 1500 not allowed", actual: StringCalculator.Compute("2000,1,2"));
 
             Console.WriteLine();
+            Console.WriteLine("Generator tests:");
+            Test(expected: 0, actual: Generator.Random(0, ",").Split(new []{','}).Length);
+            Test(expected: 1, actual: Generator.Random(1, ",").Split(new []{','}).Length);
+            Test(expected: 2, actual: Generator.Random(2, ",").Split(new []{','}).Length);
+            Test(expected: 10, actual: Generator.Random(10, ",").Split(new []{','}).Length);
+            Test(expected: 10, actual: Generator.Random(10, "\n").Split(new []{'\n'}).Length);
+            Test(expected: 10, actual: Generator.Random(10, ",", allowNegatives: true).Split(new []{','}).Length);
+
+
+            Console.WriteLine();
             Console.WriteLine("Running with generator:");
 
-            Console.WriteLine(StringCalculator.Compute(Generator.Random(10)));
-            Console.WriteLine(StringCalculator.Compute(Generator.Random(20)));
-            Console.WriteLine(StringCalculator.Compute(Generator.Random(100)));
-            Console.WriteLine(StringCalculator.Compute(Generator.Random(200)));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(10, ",")));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(20, ",")));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(100, ",")));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(200, ",", true)));
 
             Console.WriteLine("Press [enter] to exit");
             Console.ReadLine();
@@ -59,6 +70,11 @@ namespace dc.gitworkshop.stringCalculator
                 Console.WriteLine($"Test did not pass. Expected:{expected} Actual:{actual}");
                 Console.ResetColor();
             }
+        }
+
+        private static void Test(int expected, int actual)
+        {
+            Test(expected.ToString(), actual.ToString());
         }
     }
 }
