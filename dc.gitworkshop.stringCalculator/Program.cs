@@ -33,6 +33,14 @@ namespace dc.gitworkshop.stringCalculator
             // return error on numbers greter than 1500
             Test(expected: "numbers greater than 1500 not allowed", actual: StringCalculator.Compute("2000,1,2"));
 
+            Console.WriteLine();
+            Console.WriteLine("Running with generator:");
+
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(10)));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(20)));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(100)));
+            Console.WriteLine(StringCalculator.Compute(Generator.Random(200)));
+
             Console.WriteLine("Press [enter] to exit");
             Console.ReadLine();
         }
@@ -41,12 +49,15 @@ namespace dc.gitworkshop.stringCalculator
         {
             if (expected == actual)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("OK");
+                Console.ResetColor();
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Test did not pass. Expected:{expected} Actual:{actual}");
+                Console.ResetColor();
             }
         }
     }
