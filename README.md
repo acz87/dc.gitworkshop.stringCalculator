@@ -42,11 +42,10 @@ We need to reset all repositories so we can try the git `rebase`+`merge` approac
     You can do it using the following commands:
 ```
 git checkout master
-git reset --hard 7781e3413f
+git reset --hard <hash of commit master should be reset to>
 git push --force
 ```
-This will reset the `master` branch in `origin` to the commit `7781e3413f` (aka the commit before everyone pushed his work).
-`master` in your local repository should be also reseted.
+This will reset `master` both locally and in `origin` to the commit speified commit.
 
 The remaining 2 team members will need to wait untill you are done and then:
 ```
