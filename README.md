@@ -20,7 +20,15 @@ This exercise is a simple programming exercise to demo the differency between us
       * 1 person works on the suming numbers - `StringCalculator.Sum()`
    * 1 person works on the `Generator`
    * Everyone works and commits to his/her own branch
-5. When coding remember to commit frequenty. You can commit after implementing every unit test.
+5. Try to implement one unittest at a time.
+6. Commit frequenty, use the TDD (Test Driven Development) workflow:
+   1. `RED` - run tests (`RED` - test doesn't pass )
+   2. `GREEN` - implement a single unit-test as simple as you can (`GREEN` - test passes). Commit now.
+   3. `REFACTOR` - if you don't like your code refactor it
+      * when you're done refactoring and the test still passes - `commit`
+      * when you want to start over or move to the next unit-test: `git reset --hard`
+   4. Go to 1. untill all unit-tests pass.
+
 
 ### Putting it all together
 
