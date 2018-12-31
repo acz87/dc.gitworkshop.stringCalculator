@@ -36,7 +36,7 @@ When you are done coding and commiting it's time to put everything together.
 
 #### Merge only
 
-6. Try the `merge` only apporach with your team first:
+7. Try the `merge` only apporach with your team first:
     * Everyone just merges his work into `master` and pushes it to `origin`
 
 How does the commit history look like?
@@ -46,7 +46,7 @@ Is it clear and easy to follow?
 
 We need to reset all repositories so we can try the git `rebase`+`merge` approach.
 
-7. Reset `master` in `origin` to the commit it was on before everyone merged his changes.
+8. Reset `master` in `origin` to the commit it was on before everyone merged his changes.
     You can do it using the following commands:
 ```
 git checkout master
