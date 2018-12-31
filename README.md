@@ -25,9 +25,9 @@ This exercise is a simple programming exercise to demo the differency between us
    1. `RED` - run tests (`RED` - test doesn't pass )
    2. `GREEN` - implement a single unit-test as simple as you can (`GREEN` - test passes). Commit now.
    3. `REFACTOR` - if you don't like your code refactor it
-      * when you're done refactoring and the test still passes - `commit`
+      * when you're done refactoring and the test still passes - `git commit`
       * when you want to start over or move to the next unit-test: `git reset --hard`
-   4. Go to 1. untill all unit-tests pass.
+   4. Go to `i.` untill all unit-tests pass.
 
 
 ### Putting it all together
