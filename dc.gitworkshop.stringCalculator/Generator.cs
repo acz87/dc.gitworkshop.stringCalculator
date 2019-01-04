@@ -8,6 +8,7 @@ namespace dc.gitworkshop.stringCalculator
         {
             if (count <= 0)
                 throw new Exception("Variable count must be greater than 0.");
+                
 
             Random r = new Random();
             string result = "";
