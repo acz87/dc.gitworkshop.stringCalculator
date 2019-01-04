@@ -25,7 +25,22 @@ namespace dc.gitworkshop.stringCalculator
 
         private static string Sum(string input)
         {
-            return "0";
+            int y=0;
+            string[] table;
+            table = input.Split(',');
+            if (input.Length != 0)
+            {
+                for (int i = 0; i < table.Length; i++)
+                {
+                    int parsed;
+                    if (int.TryParse(table[i], out parsed))
+                    {
+                        y += parsed;
+                    }
+
+                }
+            }
+            return y.ToString();
         }
     }
 }
