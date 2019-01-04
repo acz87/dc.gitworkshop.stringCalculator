@@ -10,6 +10,7 @@ namespace dc.gitworkshop.stringCalculator
             if (isok)
             {
                 return Sum(input);
+                
             }
             else
             {
@@ -20,7 +21,46 @@ namespace dc.gitworkshop.stringCalculator
         private static bool Validate(string input, out string error)
         {
             error = null;
-            return true;
+            var splitter = Convert.ToChar(",");
+
+            string[] elements;
+            elements = input.Split(splitter);
+
+            int elementsLen = 0;
+            if (elements.Length > 0 && elements[0]!="")
+            {
+                elementsLen = elements.Length;
+
+                var i = 0;
+
+                for (i = 0; i < elementsLen; i++)
+                {
+                    int result;
+                    bool parsed = int.TryParse(elements[i], out result);
+
+
+                    if (parsed == false)
+
+                        return false;
+                    else
+                    {
+                        if (result < 0)
+                        {
+                            error = "negatives not allowed";
+                            return false;
+                        }
+                    }
+
+                }
+
+                //error = null;
+                return true;
+            }
+            else if (elements.Length == 1 && elements[0] == "")
+                return true;
+            else
+                return false;
+
         }
 
         private static string Sum(string input)
@@ -41,6 +81,8 @@ namespace dc.gitworkshop.stringCalculator
                 }
             }
             return y.ToString();
+
+            return "0";
         }
     }
 }
